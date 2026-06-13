@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="540" viewBox="0 0 900 540" font-family="ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f97316"/>
+      <stop offset="0.5" stop-color="#a855f7"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- window -->
+  <rect x="6" y="6" width="888" height="528" rx="14" fill="url(#border)" opacity="0.6"/>
+  <rect x="8" y="8" width="884" height="524" rx="13" fill="url(#bg)"/>
+
+  <!-- title bar -->
+  <circle cx="36" cy="40" r="7" fill="#ff5f56"/>
+  <circle cx="60" cy="40" r="7" fill="#ffbd2e"/>
+  <circle cx="84" cy="40" r="7" fill="#27c93f"/>
+  <text x="450" y="45" text-anchor="middle" fill="#8b949e" font-size="15">tribunal — verdict</text>
+  <line x1="8" y1="66" x2="892" y2="66" stroke="#21262d" stroke-width="1"/>
+
+  <!-- header -->
+  <text x="36" y="104" fill="#e6edf3" font-size="22" font-weight="700">⚖️  Verdict — genuinely weak spots</text>
+  <text x="36" y="132" fill="#8b949e" font-size="14">11 files · 20 accusations · 12 confirmed weak · integration stage: clean</text>
+
+  <!-- critical -->
+  <text x="36" y="178" fill="#f85149" font-size="15" font-weight="700">🔴 CRITICAL</text>
+  <text x="36" y="204" fill="#c9d1d9" font-size="14"><tspan fill="#79c0ff">auth.py:28</tspan>  — initData has no auth_date / expiry check.</text>
+  <text x="58" y="226" fill="#8b949e" font-size="13">A captured token replays as the victim — forever. auth_date is parsed but never used.</text>
+
+  <!-- major -->
+  <text x="36" y="266" fill="#ffa657" font-size="15" font-weight="700">🟠 MAJOR</text>
+  <text x="36" y="292" fill="#c9d1d9" font-size="14"><tspan fill="#79c0ff">auth.py:77</tspan>  — dev-bypass keys off one env var, no prod guard → full auth bypass if it leaks.</text>
+  <text x="36" y="316" fill="#c9d1d9" font-size="14"><tspan fill="#79c0ff">billing.py:87</tspan>  — free-tier check-then-act race: two parallel requests both pass the cooldown.</text>
+  <text x="36" y="340" fill="#c9d1d9" font-size="14"><tspan fill="#79c0ff">credits.py:47</tspan>  — add() is a non-atomic read-modify-write → lost updates on concurrent refund.</text>
+
+  <!-- minor -->
+  <text x="36" y="380" fill="#d29922" font-size="15" font-weight="700">🟡 MINOR (6)</text>
+  <text x="36" y="406" fill="#8b949e" font-size="13">empty result still burns a free slot · /api/merge unauthenticated · create_all, no migrations · …</text>
+
+  <!-- footer note -->
+  <line x1="36" y1="438" x2="864" y2="438" stroke="#21262d" stroke-width="1"/>
+  <text x="36" y="468" fill="#8b949e" font-size="13">Each spot survived a clash: a <tspan fill="#f85149">hater</tspan> accused it, a <tspan fill="#3fb950">judge</tspan> tried to justify it — and couldn't.</text>
+  <text x="36" y="492" fill="#6e7681" font-size="13">Report written to docs/reviews/ · nitpicks the judge defended were dropped.</text>
+  <text x="36" y="516" fill="#a371f7" font-size="13">$ /tribunal</text>
+</svg>
